@@ -61,6 +61,13 @@ import beautyProfessionalDigitalTools from '../assets/images/beauty_professional
 import investorEcosystemInfographic from '../assets/images/investor_ecosystem_infographic_1791355198970.jpg';
 import jaipurBrandingImg from '../assets/images/nexora_one_branding_vision_cinematic_1791371326735.jpg';
 import salonVisionImg from '../assets/images/nexora_one_brand_vision_salon_final_1791368325988.jpg';
+import { InteractiveImage } from '../components/common/InteractiveImage';
+import shotGrowthPartnerV2Img from '../assets/images/shot_growth_partner_v2_1791208604943.jpg';
+import shotGrowthPartnerImg from '../assets/images/shot_growth_partner_1791206982477.jpg';
+import shotSalonosRefinedImg from '../assets/images/shot_salonos_refined_1791206865248.jpg';
+import shotWhiteLabelImg from '../assets/images/shot_white_label_1791206764231.jpg';
+import shotSalonosImg from '../assets/images/shot_salonos_1791206633802.jpg';
+import growthPartnerRewardSystemImg from '../assets/images/growth_partner_reward_system_cinematic_1791237816011.jpg';
 
 export const BenefitsPage: React.FC = () => {
   const { t } = useTranslation();
@@ -72,6 +79,86 @@ export const BenefitsPage: React.FC = () => {
   const growthPartnerStakeholder = STAKEHOLDERS.find((s) => s.id === 'growth-partner')!;
   const b2bStakeholder = STAKEHOLDERS.find((s) => s.id === 'b2b')!;
   const investorStakeholder = STAKEHOLDERS.find((s) => s.id === 'investor')!;
+
+  const growthPartnerVisualSteps = [
+    {
+      num: '01',
+      title: 'Find a Salon',
+      subtitle: 'Locate local salon prospects in your area',
+      image: shotGrowthPartnerV2Img,
+      icon: Search,
+    },
+    {
+      num: '02',
+      title: 'Meet the Owner',
+      subtitle: 'Connect directly with the decision maker',
+      image: salonOwnerWomanLeaderImg,
+      icon: Users,
+    },
+    {
+      num: '03',
+      title: 'Show Nexora',
+      subtitle: 'Demonstrate live website & digital tools',
+      image: shotGrowthPartnerImg,
+      icon: Smartphone,
+    },
+    {
+      num: '04',
+      title: 'Launch the Salon',
+      subtitle: 'Activate SalonOS and free web presence',
+      image: shotSalonosRefinedImg,
+      icon: Zap,
+    },
+    {
+      num: '05',
+      title: 'Grow & Earn Rewards',
+      subtitle: 'Track verified activations & wallet rewards',
+      image: growthPartnerRewards,
+      icon: Crown,
+    },
+  ];
+
+  const partnerBenefitCards = [
+    {
+      badge: 'Zero Upfront Cost',
+      title: 'Free Website',
+      subtitle: 'Custom Branded Web Presence',
+      desc: 'Give salons a professional, mobile-first website with custom domain readiness, menu showcase, and Google discovery at zero development cost.',
+      image: shotWhiteLabelImg,
+      icon: Globe,
+      features: [
+        'Instant live URL with mobile-first design',
+        'Showcase service catalog, photos & pricing',
+        'Zero upfront or ongoing hosting fees for owners',
+      ],
+    },
+    {
+      badge: 'Digital Operations',
+      title: 'SalonOS Tools',
+      subtitle: 'Complete Daily Operating System',
+      desc: 'Equip salon owners with smart appointment scheduling, customer history, staff commissions, and automated WhatsApp appointment reminders.',
+      image: shotSalonosImg,
+      icon: Zap,
+      features: [
+        'Real-time appointment calendar & bookings',
+        'Customer database with automated birthday wishes',
+        'Daily billing, expense tracking & staff management',
+      ],
+    },
+    {
+      badge: 'Transparent Payouts',
+      title: 'Partner Rewards',
+      subtitle: 'Direct & Milestone Earnings',
+      desc: 'Earn verified onboarding incentives, unlock territory milestone bonuses, and build recurring network rewards tracked live on your partner wallet.',
+      image: growthPartnerRewardSystemImg,
+      icon: TrendingUp,
+      features: [
+        'Direct cash credit for every active salon onboarded',
+        'City territory milestone unlock bonuses',
+        'Transparent tracking on Growth Partner dashboard',
+      ],
+    },
+  ];
 
   const salonOwnerFeatureCards = [
     {
@@ -1120,51 +1207,147 @@ export const BenefitsPage: React.FC = () => {
               </Button>
             </div>
 
-            {/* Core Message Hinglish */}
-            <div className="mb-16 p-8 rounded-3xl bg-white/[0.03] border border-white/10 text-center">
-              <p className="text-xl sm:text-2xl font-heading font-bold text-white leading-relaxed max-w-4xl mx-auto">
-                “Local salons ko digital banaiye. Nexora network ko apne city mein grow kijiye. Har verified salon onboarding ke saath apna partner progress track kijiye.”
-              </p>
-            </div>
-
-            {/* 3. PARTNER JOURNEY & ONBOARDING FLOW */}
-            <div className="mb-16 grid grid-cols-1 lg:grid-cols-2 gap-10">
-              {/* Partner Journey */}
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <Activity className="w-5 h-5 text-[#DAAF37]" />
-                  <h4 className="text-lg font-heading font-bold text-white uppercase tracking-wider">Partner Journey</h4>
+            {/* 3. SIMPLIFIED PARTNER JOURNEY */}
+            <div className="mb-16">
+              {/* Core Message & Header */}
+              <div className="mb-10 text-center max-w-4xl mx-auto">
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DAAF37]/10 border border-[#DAAF37]/30 mb-4 shadow-[0_0_15px_rgba(218,175,55,0.15)]">
+                  <Sparkles className="w-3.5 h-3.5 text-[#DAAF37]" />
+                  <span className="text-[11px] font-heading font-bold uppercase tracking-[0.2em] text-[#DAAF37]">
+                    Nexora Growth Partner Journey
+                  </span>
                 </div>
-                <div className="space-y-3">
-                  {growthPartnerStakeholder.journeySteps.map((step, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-white/[0.02] border border-white/5 text-[11px] font-sans text-white/70 hover:border-[#DAAF37]/30 transition-colors">
-                      <span className="w-5 h-5 rounded-full bg-[#DAAF37]/20 flex items-center justify-center text-[#DAAF37] text-[9px] font-bold">{i+1}</span>
-                      <span>{step}</span>
+                <h3 className="text-2xl sm:text-3xl lg:text-4xl font-heading font-bold text-white tracking-tight">
+                  Find a salon, help it go digital, and grow with Nexora.
+                </h3>
+                <p className="mt-3 text-sm sm:text-base font-sans text-white/70 max-w-2xl mx-auto leading-relaxed">
+                  Ek saral aur prabhavi 5-step digital transformation safar: local salons ko digital kijiye, unhe modern tools dijiye, aur apna partner milestone progress track kijiye.
+                </p>
+              </div>
+
+              {/* 5 Visual Steps: Desktop Horizontal with Connecting Arrows / Mobile Compact Layout */}
+              <div className="relative">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 lg:gap-3 items-stretch">
+                  {growthPartnerVisualSteps.map((step, idx) => (
+                    <div key={idx} className="relative flex flex-col h-full">
+                      {/* Step Card */}
+                      <div className="relative h-full flex flex-col rounded-2xl bg-black/60 border border-white/10 hover:border-[#DAAF37]/50 transition-all duration-300 overflow-hidden group shadow-lg hover:shadow-[0_0_25px_rgba(218,175,55,0.2)]">
+                        {/* Image Container with Luxury Overlay */}
+                        <div className="relative aspect-[4/3] w-full overflow-hidden bg-black/80">
+                          <InteractiveImage
+                            src={step.image}
+                            alt={step.title}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                            loading="lazy"
+                          />
+                          <div className="absolute inset-0 bg-gradient-to-t from-black via-black/30 to-transparent" />
+                          
+                          {/* Step Number Badge */}
+                          <div className="absolute top-2.5 left-2.5 px-2 py-0.5 rounded-md bg-black/80 backdrop-blur-md border border-[#DAAF37]/40 text-[#DAAF37] text-[10px] font-heading font-bold tracking-widest flex items-center gap-1 shadow-md">
+                            <span>STEP {step.num}</span>
+                          </div>
+
+                          {/* Icon Badge */}
+                          <div className="absolute top-2.5 right-2.5 w-7 h-7 rounded-lg bg-black/70 backdrop-blur-md border border-white/15 flex items-center justify-center text-[#DAAF37] group-hover:border-[#DAAF37]/50 transition-colors">
+                            <step.icon className="w-3.5 h-3.5" />
+                          </div>
+                        </div>
+
+                        {/* Card Content */}
+                        <div className="p-4 flex flex-col flex-1 justify-between bg-gradient-to-b from-transparent to-white/[0.02]">
+                          <div>
+                            <h5 className="font-heading font-bold text-white text-sm sm:text-base tracking-wide group-hover:text-[#DAAF37] transition-colors leading-snug">
+                              {step.title}
+                            </h5>
+                            <p className="mt-1.5 text-xs font-sans text-white/60 leading-relaxed">
+                              {step.subtitle}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Desktop Connecting Arrow between steps */}
+                      {idx < growthPartnerVisualSteps.length - 1 && (
+                        <div className="hidden lg:flex absolute -right-2.5 top-[35%] -translate-y-1/2 z-20 w-6 h-6 rounded-full bg-black/90 border border-[#DAAF37]/60 items-center justify-center text-[#DAAF37] shadow-[0_0_12px_rgba(218,175,55,0.4)] pointer-events-none">
+                          <ArrowRight className="w-3 h-3" />
+                        </div>
+                      )}
+
+                      {/* Mobile Connecting Arrow between steps */}
+                      {idx < growthPartnerVisualSteps.length - 1 && (
+                        <div className="flex sm:hidden justify-center py-1 text-[#DAAF37]/60">
+                          <div className="w-6 h-6 rounded-full bg-white/[0.03] border border-white/10 flex items-center justify-center text-[#DAAF37]">
+                            <ArrowRight className="w-3 h-3 rotate-90" />
+                          </div>
+                        </div>
+                      )}
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Onboarding Flow */}
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <Target className="w-5 h-5 text-[#DAAF37]" />
-                  <h4 className="text-lg font-heading font-bold text-white uppercase tracking-wider">Salon Onboarding Flow</h4>
+              {/* 3 BENEFIT CARDS */}
+              <div className="mt-14 pt-12 border-t border-white/10">
+                <div className="text-center mb-10">
+                  <span className="text-xs uppercase font-heading font-bold text-[#DAAF37] tracking-[0.25em] block mb-2">
+                    Partner & Salon Benefits
+                  </span>
+                  <h4 className="text-xl sm:text-2xl font-heading font-bold text-white tracking-tight">
+                    Three Pillars of Nexora Growth
+                  </h4>
                 </div>
-                <div className="space-y-3">
-                  {[
-                    'Salon Lead Identification',
-                    'Salon Owner Contact',
-                    'Product Demonstration (GP)',
-                    'Salon Registration',
-                    'Website & SalonOS Setup',
-                    'Customer Database Setup',
-                    'Final Activation',
-                    'Partner Dashboard Credit'
-                  ].map((step, i) => (
-                    <div key={i} className="flex items-center gap-3 p-3 rounded-xl bg-[#DAAF37]/5 border border-[#DAAF37]/10 text-[11px] font-sans text-white/80 hover:border-[#DAAF37]/40 transition-colors">
-                      <div className="w-1.5 h-1.5 rounded-full bg-[#DAAF37]" />
-                      <span>{step}</span>
+
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+                  {partnerBenefitCards.map((card, i) => (
+                    <div
+                      key={i}
+                      className="rounded-2xl sm:rounded-3xl bg-gradient-to-b from-white/[0.04] to-black/80 border border-white/10 hover:border-[#DAAF37]/50 transition-all duration-300 p-6 flex flex-col group relative overflow-hidden shadow-xl hover:shadow-[0_0_30px_rgba(218,175,55,0.15)]"
+                    >
+                      <div className="absolute top-0 right-0 w-32 h-32 bg-[#DAAF37]/5 rounded-full blur-2xl group-hover:bg-[#DAAF37]/10 transition-colors pointer-events-none" />
+
+                      {/* Badge & Icon */}
+                      <div className="flex items-center justify-between mb-4">
+                        <span className="text-[10px] font-heading font-bold uppercase tracking-[0.2em] px-2.5 py-1 rounded-md bg-[#DAAF37]/10 border border-[#DAAF37]/30 text-[#DAAF37]">
+                          {card.badge}
+                        </span>
+                        <div className="w-9 h-9 rounded-xl bg-black/60 border border-[#DAAF37]/30 flex items-center justify-center text-[#DAAF37] group-hover:scale-110 transition-transform">
+                          <card.icon className="w-4 h-4" />
+                        </div>
+                      </div>
+
+                      {/* Image Preview */}
+                      <div className="relative aspect-[16/10] w-full rounded-xl overflow-hidden border border-white/10 mb-5 group-hover:border-[#DAAF37]/30 transition-colors bg-black/60">
+                        <InteractiveImage
+                          src={card.image}
+                          alt={card.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 opacity-90 group-hover:opacity-100"
+                          loading="lazy"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent" />
+                        <div className="absolute bottom-2.5 left-3">
+                          <span className="text-[11px] font-heading font-semibold text-white/90">
+                            {card.subtitle}
+                          </span>
+                        </div>
+                      </div>
+
+                      {/* Title & Description */}
+                      <h5 className="text-xl font-heading font-bold text-white mb-2 group-hover:text-[#DAAF37] transition-colors">
+                        {card.title}
+                      </h5>
+                      <p className="text-xs font-sans text-white/70 leading-relaxed mb-6">
+                        {card.desc}
+                      </p>
+
+                      {/* Feature Bullet Points */}
+                      <div className="mt-auto pt-4 border-t border-white/10 space-y-2.5">
+                        {card.features.map((feat, fIdx) => (
+                          <div key={fIdx} className="flex items-center gap-2.5 text-xs text-white/80 font-sans">
+                            <CheckCircle2 className="w-4 h-4 text-[#DAAF37] flex-shrink-0" />
+                            <span>{feat}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   ))}
                 </div>
