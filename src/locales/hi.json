@@ -1,0 +1,120 @@
+{
+  "nav": {
+    "home": { "full": "होम", "short": "होम" },
+    "ecosystem": { "full": "हमारा Ecosystem", "short": "Ecosystem" },
+    "products": { "full": "उत्पाद और प्लेटफ़ॉर्म", "short": "उत्पाद" },
+    "beauty": { "full": "सौंदर्य Ecosystem", "short": "सौंदर्य" },
+    "benefits": { "full": "किसे लाभ होता है?", "short": "लाभ" },
+    "verticals": { "full": "हमारे वर्टिकल्स", "short": "वर्टिकल्स" },
+    "vision": { "full": "दृष्टि और मिशन", "short": "दृष्टि" },
+    "investors": { "full": "निवेशक", "short": "निवेशक" },
+    "research": { "full": "बाजार अनुसंधान और भेदभाव", "short": "अनुसंधान" },
+    "investor_guide": { "full": "निवेशक गाइड / शार्क टैंक", "short": "निवेशक गाइड" },
+    "about": { "full": "Nexora One के बारे में", "short": "Nexora One" },
+    "more": "अधिक",
+    "cta": "Ecosystem देखें"
+  },
+  "footer": {
+    "brandStatement": "Nexora One एक कनेक्टेड, मल्टी-वर्टिकल डिजिटल Ecosystem है, जिसकी शुरुआत Beauty से होती है।",
+    "ecosystemTitle": "Ecosystem वर्टिकल्स",
+    "productsTitle": "उत्पाद और प्लेटफ़ॉर्म",
+    "companyTitle": "कंपनी",
+    "contactTitle": "संपर्क करें",
+    "contactEmail": "ईमेल:",
+    "contactPhone": "फ़ोन:",
+    "policiesTitle": "नीतियां और कानूनी",
+    "rights": "© 2026 Nexora One. सर्वाधिकार सुरक्षित।",
+    "privacy": "गोपनीयता",
+    "terms": "शर्तें",
+    "cookies": "कुकीज़",
+    "refunds": "धनवापसी",
+    "disclaimer": "अस्वीकरण",
+    "grievanceSupport": "शिकायत और समर्थन",
+    "sections": {
+      "beauty": "सौंदर्य",
+      "realEstate": "रियल एस्टेट",
+      "foodDelivery": "फ़ूड डिलीवरी",
+      "jobs": "नौकरियां",
+      "commerce": "वाणिज्य",
+      "advertising": "विज्ञापन",
+      "aiTechnology": "AI और प्रौद्योगिकी",
+      "salonos": "SalonOS",
+      "whiteLabelWebsitesApps": "व्हाइट-लेबल वेबसाइटें और ऐप्स",
+      "growthPartner": "ग्रोथ पार्टनर",
+      "beautyB2B": "सौंदर्य B2B",
+      "customerApp": "ग्राहक ऐप",
+      "visionMission": "दृष्टि और मिशन",
+      "marketResearch": "बाजार अनुसंधान",
+      "about": "के बारे में",
+      "investorGuideSharkTank": "निवेशक गाइड / शार्क टैंक",
+      "privacyPolicy": "गोपनीयता नीति",
+      "termsConditions": "नियम और शर्तें",
+      "cookiePolicy": "कुकी नीति",
+      "refundCancellationPolicy": "धनवापसी और रद्दीकरण नीति",
+      "disclaimer": "अस्वीकरण",
+      "grievanceSupport": "शिकायत / समर्थन"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "कनेक्टेड डिजिटल इकोसिस्टम",
+      "title": "NEXORA ONE",
+      "subtitle": "एक कनेक्टेड डिजिटल इकोसिस्टम",
+      "description": "ग्राहकों, व्यवसायों, पेशेवरों, भागीदारों और ब्रांडों को प्रौद्योगिकी के माध्यम से सशक्त बनाना।",
+      "cta": {
+        "explore": "इकोसिस्टम देखें",
+        "products": "उत्पाद देखें"
+      }
+    },
+    "benefits": {
+      "eyebrow": "प्रतिभागी मूल्य",
+      "title": "डिज़ाइन किया गया",
+      "titleAccent": "प्रत्येक प्रतिभागी के लिए",
+      "subtitle": "नेक्सोरा वन चार मुख्य हितधारकों के लिए संरचित उपकरण, खोज तंत्र और डिजिटल लाभ प्रदान करता है।",
+      "cta": "कौन लाभान्वित होता है देखें"
+    }
+  },
+  "about": {
+    "principles": {
+      "title1": "सब एक जगह",
+      "desc1": "Salon, Customer, Growth Partner और Beauty Business को एक connected platform से जोड़ना।",
+      "title2": "आसान डिजिटल टूल्स",
+      "desc2": "Local business को powerful digital tools देना, ताकि उनका काम आसान हो और वो बढ़ सकें।",
+      "title3": "पूरी पारदर्शिता",
+      "desc3": "हम क्या कर रहे हैं और क्या प्लान है, इसकी पूरी जानकारी आप तक साफ़-साफ़ पहुँचाना।",
+      "title4": "आपकी अपनी पहचान",
+      "desc4": "Local business को उनकी अपनी digital identity देना, ताकि वो अपनी अलग पहचान बना सकें।"
+    }
+  },
+  "seo": {
+    "home": { "title": "Nexora One – कनेक्टेड डिजिटल इकोसिस्टम", "description": "नेक्सोरा वन के कनेक्टेड डिजिटल इकोसिस्टम के साथ अपने ब्यूटी व्यवसाय, सैलून या ब्रांड को सशक्त बनाएं।" },
+    "vision": { "title": "दृष्टि और मिशन – Nexora One", "description": "प्रौद्योगिकी के माध्यम से व्यवसायों को सशक्त बनाने के लिए नेक्सोरा वन की प्रतिबद्धता के बारे में जानें।" },
+    "ecosystem": { "title": "हमारा इकोसिस्टम – Nexora One", "description": "नेक्सोरा वन के मल्टी-वर्टिकल डिजिटल इकोसिस्टम को देखें।" },
+    "benefits": { "title": "किसे लाभ होता है? – Nexora One", "description": "देखें कि कैसे नेक्सोरा वन सैलून मालिकों, ग्राहकों, भागीदारों और ब्रांडों को सशक्त बनाता है।" },
+    "beauty": { "title": "सौंदर्य इकोसिस्टम – Nexora One", "description": "नेक्सोरा वन द्वारा कनेक्टेड ब्यूटी बिजनेस प्लेटफॉर्म।" },
+    "verticals": { "title": "हमारे वर्टिकल्स – Nexora One", "description": "नेक्सोरा वन के मल्टी-वर्टिकल विस्तार को खोजें।" },
+    "products": { "title": "उत्पाद और प्लेटफ़ॉर्म – Nexora One", "description": "नेक्सोरा वन से शक्तिशाली डिजिटल प्लेटफ़ॉर्म देखें।" },
+    "research": { "title": "बाजार अनुसंधान – Nexora One", "description": "नेक्सोरा वन से बाजार अंतर्दृष्टि और अनुसंधान।" },
+    "about": { "title": "Nexora One के बारे में", "description": "नेक्सोरा वन की टीम और मिशन के बारे में।" },
+    "insights": { "title": "अंतर्दृष्टि – Nexora One", "description": "उद्योग अंतर्दृष्टि और अपडेट।" },
+    "investors": { "title": "निवेशक – Nexora One", "description": "निवेशक जानकारी और इकोसिस्टम विकास।" },
+    "policies": { "title": "नीतियां – Nexora One", "description": "कानूनी और नीति दस्तावेज।" }
+  },
+  "common": {
+    "ecosystem": "इकोसिस्टम"
+  },
+  "comparisonTable": {
+    "heading": "Nexora से क्या बदलेगा?",
+    "features": "फ़ीचर",
+    "oldWay": "Nexora के बिना (पुराना तरीका)",
+    "withNexora": "Nexora के साथ",
+    "rows": {
+      "customerData": { "f": "ग्राहक डेटा", "old": "नोटबुक या मोबाइल कॉन्टैक्ट्स", "new": "प्रोफेशनल डिजिटल डेटाबेस" },
+      "followUp": { "f": "फॉलो-अप / रिकॉल", "old": "ग्राहकों के वापस आने का इंतज़ार", "new": "ऑटोमैटिक 30-दिन रिकॉल" },
+      "marketing": { "f": "मार्केटिंग", "old": "मैनुअल कॉल और मैसेज", "new": "AI-पावर्ड ऑटोमेशन" },
+      "newCustomers": { "f": "नए ग्राहक", "old": "वर्ड ऑफ माउथ (धीमा)", "new": "डिस्कवरी प्लेटफ़ॉर्म (तेज़)" },
+      "onlinePresence": { "f": "ऑनलाइन उपस्थिति", "old": "कोई वेबसाइट नहीं, या ख़राब", "new": "प्रीमियम प्रोफेशनल वेबसाइट" },
+      "staffPayments": { "f": "स्टाफ / भुगतान", "old": "मैनुअल कैलकुलेशन", "new": "ऑटोमैटिक रिपोर्ट" }
+    }
+  }
+}

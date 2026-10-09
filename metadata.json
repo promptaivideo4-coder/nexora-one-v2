@@ -1,0 +1,9 @@
+{
+  "name": "Nexora One",
+  "description": "Connected Digital Ecosystem connecting customers, businesses, professionals, growth partners, brands and distributors.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
+

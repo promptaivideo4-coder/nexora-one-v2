@@ -1,0 +1,121 @@
+{
+  "nav": {
+    "home": { "full": "Home", "short": "Home" },
+    "ecosystem": { "full": "Our Ecosystem", "short": "Ecosystem" },
+    "products": { "full": "Products & Platforms", "short": "Products" },
+    "beauty": { "full": "Beauty Ecosystem", "short": "Beauty" },
+    "benefits": { "full": "Who Benefits?", "short": "Benefits" },
+    "verticals": { "full": "Our Verticals", "short": "Verticals" },
+    "vision": { "full": "Vision & Mission", "short": "Vision" },
+    "investors": { "full": "Investors", "short": "Investors" },
+    "research": { "full": "Market Research & Differentiation", "short": "Research" },
+    "investor_guide": { "full": "Investor Guide / Shark Tank", "short": "Investor Guide" },
+    "about": { "full": "About Nexora One", "short": "About" },
+    "more": "More",
+    "cta": "Explore the Ecosystem"
+  },
+  "footer": {
+    "brandStatement": "Nexora One is a connected, multi-vertical digital ecosystem, beginning with Beauty.",
+    "ecosystemTitle": "Ecosystem Verticals",
+    "productsTitle": "Products & Platforms",
+    "companyTitle": "Company",
+    "contactTitle": "Contact",
+    "contactEmail": "Email:",
+    "contactPhone": "Phone:",
+    "policiesTitle": "Policies & Legal",
+    "rights": "© 2026 Nexora One. All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms",
+    "cookies": "Cookies",
+    "refunds": "Refunds",
+    "disclaimer": "Disclaimer",
+    "grievanceSupport": "Grievance & Support",
+    "sections": {
+      "beauty": "Beauty",
+      "realEstate": "Real Estate",
+      "foodDelivery": "Food Delivery",
+      "jobs": "Jobs",
+      "commerce": "Commerce",
+      "advertising": "Advertising",
+      "aiTechnology": "AI & Technology",
+      "salonOs": "SalonOS",
+      "whiteLabelWebsitesApps": "White-Label Websites & Apps",
+      "growthPartner": "Growth Partner",
+      "beautyB2B": "Beauty B2B",
+      "customerApp": "Customer App",
+      "visionMission": "Vision & Mission",
+      "marketResearch": "Market Research",
+      "about": "About",
+      "investorGuideSharkTank": "Investor Guide / Shark Tank",
+      "privacyPolicy": "Privacy Policy",
+      "termsConditions": "Terms & Conditions",
+      "cookiePolicy": "Cookie Policy",
+      "refundCancellationPolicy": "Refund & Cancellation Policy",
+      "grievanceSupport": "Grievance / Support"
+    }
+  },
+  "home": {
+    "hero": {
+      "badge": "Connected Digital Ecosystem",
+      "title": "NEXORA ONE",
+      "subtitle": "Your Connected Digital Ecosystem",
+      "description": "Empowering customers, businesses, professionals, partners and brands through technology.",
+      "cta": {
+        "explore": "Explore Ecosystem",
+        "products": "Explore Products"
+      }
+    },
+    "benefits": {
+      "eyebrow": "Participant Value",
+      "title": "Designed",
+      "titleAccent": "For Every Participant",
+      "subtitle": "Nexora One provides structured tools, discovery mechanisms, and digital advantages for four key stakeholders.",
+      "cta": "See Who Benefits"
+    }
+  },
+  "buttons": {
+    "exploreEcosystem": "Explore Ecosystem",
+    "exploreProducts": "Explore Products",
+    "seeWhoBenefits": "See Who Benefits"
+  },
+  "about": {
+    "principles": {
+      "title1": "All in one place",
+      "desc1": "Connecting salon, customer, growth partner and beauty business on a single connected platform.",
+      "title2": "Easy digital tools",
+      "desc2": "Providing powerful digital tools to local businesses, making their work easy and enabling growth.",
+      "title3": "Full transparency",
+      "desc3": "Clearly providing all information about our activities and plans.",
+      "title4": "Your own identity",
+      "desc4": "Giving local businesses their own digital identity, allowing them to create a unique brand."
+    }
+  },
+  "seo": {
+    "home": { "title": "Nexora One – Connected Digital Ecosystem", "description": "Empower your beauty business, salon, or brand with Nexora One's connected digital ecosystem." },
+    "vision": { "title": "Vision & Mission – Nexora One", "description": "Learn about Nexora One's commitment to empowering businesses through technology." },
+    "ecosystem": { "title": "Our Ecosystem – Nexora One", "description": "Explore Nexora One's multi-vertical digital ecosystem." },
+    "benefits": { "title": "Who Benefits? – Nexora One", "description": "See how Nexora One empowers salon owners, customers, partners, and brands." },
+    "beauty": { "title": "Beauty Ecosystem – Nexora One", "description": "The connected beauty business platform by Nexora One." },
+    "verticals": { "title": "Our Verticals – Nexora One", "description": "Discover Nexora One's multi-vertical expansion." },
+    "products": { "title": "Products & Platforms – Nexora One", "description": "Explore powerful digital platforms from Nexora One." },
+    "research": { "title": "Market Research – Nexora One", "description": "Market insights and research from Nexora One." },
+    "about": { "title": "About Nexora One", "description": "About Nexora One's team and mission." },
+    "insights": { "title": "Insights – Nexora One", "description": "Industry insights and updates." },
+    "investors": { "title": "Investors – Nexora One", "description": "Investor information and ecosystem growth." },
+    "policies": { "title": "Policies – Nexora One", "description": "Legal and policy documents." }
+  },
+  "comparisonTable": {
+    "heading": "What changes with Nexora?",
+    "features": "Feature",
+    "oldWay": "Without Nexora (Old way)",
+    "withNexora": "With Nexora",
+    "rows": {
+      "customerData": { "f": "Customer Data", "old": "Notebook or mobile contacts", "new": "Professional digital database" },
+      "followUp": { "f": "Follow-up / Recall", "old": "Waiting for customers to come back", "new": "Automatic 30-day recall" },
+      "marketing": { "f": "Marketing", "old": "Manual calls and messages", "new": "AI-powered automation" },
+      "newCustomers": { "f": "New Customers", "old": "Word of mouth (slow)", "new": "Discovery platform (fast)" },
+      "onlinePresence": { "f": "Online Presence", "old": "No website, or a poor one", "new": "Premium professional website" },
+      "staffPayments": { "f": "Staff / Payments", "old": "Manual calculation", "new": "Automated reports" }
+    }
+  }
+}

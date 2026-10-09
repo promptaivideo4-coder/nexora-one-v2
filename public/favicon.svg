@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <radialGradient id="bgGlow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" stopColor="#1C180A" />
+      <stop offset="60%" stopColor="#0B0904" />
+      <stop offset="100%" stopColor="#000000" />
+    </radialGradient>
+
+    <!-- Bottom Ground Glow -->
+    <radialGradient id="groundGlow" cx="50%" cy="90%" r="45%">
+      <stop offset="0%" stopColor="#F4D03F" stopOpacity="0.55" />
+      <stop offset="35%" stopColor="#DAAF37" stopOpacity="0.3" />
+      <stop offset="100%" stopColor="#000000" stopOpacity="0" />
+    </radialGradient>
+
+    <!-- Multi-stop Brushed Gold Primary Gradient -->
+    <linearGradient id="goldNPrimary" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stopColor="#FFFBE6" />
+      <stop offset="25%" stopColor="#F9D753" />
+      <stop offset="55%" stopColor="#DFB135" />
+      <stop offset="85%" stopColor="#B3861B" />
+      <stop offset="100%" stopColor="#7A560B" />
+    </linearGradient>
+
+    <!-- Specular Diagonal Highlight -->
+    <linearGradient id="goldNDiag" x1="20%" y1="20%" x2="80%" y2="80%">
+      <stop offset="0%" stopColor="#FFFFFF" />
+      <stop offset="30%" stopColor="#FEE685" />
+      <stop offset="70%" stopColor="#DCA828" />
+      <stop offset="100%" stopColor="#966D12" />
+    </linearGradient>
+
+    <!-- Circular Orbiting Ring Gradient -->
+    <linearGradient id="goldRing" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#8A6710" />
+      <stop offset="45%" stopColor="#DAAF37" />
+      <stop offset="80%" stopColor="#FFF5C2" />
+      <stop offset="100%" stopColor="#F4D03F" />
+    </linearGradient>
+
+    <!-- 3D Bevel Shadow Gradient -->
+    <linearGradient id="goldBevelDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stopColor="#3A2803" stopOpacity="0.95" />
+      <stop offset="100%" stopColor="#C89612" stopOpacity="0.3" />
+    </linearGradient>
+  </defs>
+
+  <!-- Solid Deep Black Rounded Background -->
+  <rect width="512" height="512" rx="100" fill="url(#bgGlow)" />
+  <rect width="512" height="512" rx="100" fill="url(#groundGlow)" />
+
+  <!-- Orbiting Halo Ring Arc (Behind N) -->
+  <circle
+    cx="256"
+    cy="256"
+    r="215"
+    stroke="url(#goldRing)"
+    stroke-width="15"
+    opacity="0.9"
+    stroke-dasharray="1020 220"
+  />
+
+  <!-- Top-Right Ring Specular Flare -->
+  <circle cx="415" cy="125" r="14" fill="#FFFFFF" opacity="0.95" />
+  <circle cx="415" cy="125" r="28" fill="#F4D03F" opacity="0.45" />
+
+  <!-- 3D Bevel Base Shadow -->
+  <path
+    d="M122 418V94L290 312V94H390V418L222 200V418H122Z"
+    fill="url(#goldBevelDark)"
+    opacity="0.65"
+  />
+
+  <!-- Sculpted 3D Letter N Body -->
+  <path
+    d="M126 414V98L286 308V98H386V414L226 204V414H126Z"
+    fill="url(#goldNPrimary)"
+    stroke="url(#goldNDiag)"
+    stroke-width="6"
+    stroke-linejoin="round"
+  />
+
+  <!-- Metallic Inner Edge Ribbons for 3D Chiseled Look -->
+  <path
+    d="M126 98L226 204V414L126 414V98Z"
+    fill="url(#goldNDiag)"
+    opacity="0.3"
+  />
+  <path
+    d="M286 98L386 98V414L286 308V98Z"
+    fill="url(#goldNDiag)"
+    opacity="0.4"
+  />
+
+  <!-- Specular Highlight Sheen on Diagonal -->
+  <path
+    d="M146 124L366 396"
+    stroke="#FFFFFF"
+    stroke-width="3.5"
+    opacity="0.65"
+    stroke-linecap="round"
+  />
+</svg>
