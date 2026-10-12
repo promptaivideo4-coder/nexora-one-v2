@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { SiteHeader } from './SiteHeader';
 import { SiteFooter } from './SiteFooter';
+import { FooterCtaStrip } from './FooterCtaStrip';
 import { MobileAppDock } from './MobileAppDock';
 import { SEO_METADATA } from '../../data/seo';
 import { useLanguage } from '../../contexts/LanguageContext';
@@ -62,13 +63,23 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#0A0A0A] text-[#F5F5F5] relative overflow-x-hidden selection:bg-[#DAAF37]/30 selection:text-[#F4D03F]">
-      {/* Cinematic Ambient Background Gold Glows */}
+      {/* High-Performance Ambient Background Gold Glows */}
       <div
-        className="fixed top-[-100px] left-1/2 -translate-x-1/2 w-[900px] h-[500px] bg-gradient-to-b from-[#DAAF37]/15 via-[#DAAF37]/5 to-transparent blur-[140px] pointer-events-none z-0"
+        className="fixed top-0 left-1/2 -translate-x-1/2 w-[900px] max-w-full h-[450px] pointer-events-none z-0"
+        style={{
+          background: 'radial-gradient(ellipse 65% 55% at 50% 0%, rgba(218, 175, 55, 0.13), rgba(218, 175, 55, 0.03) 55%, transparent 75%)',
+          contain: 'strict',
+          transform: 'translate3d(-50%, 0, 0)',
+        }}
         aria-hidden="true"
       />
       <div
-        className="fixed bottom-0 right-0 w-[600px] h-[400px] bg-gradient-to-t from-[#DAAF37]/8 via-transparent to-transparent blur-[120px] pointer-events-none z-0"
+        className="fixed bottom-0 right-0 w-[550px] max-w-full h-[350px] pointer-events-none z-0"
+        style={{
+          background: 'radial-gradient(ellipse at 100% 100%, rgba(218, 175, 55, 0.07), transparent 70%)',
+          contain: 'strict',
+          transform: 'translate3d(0, 0, 0)',
+        }}
         aria-hidden="true"
       />
 
@@ -78,6 +89,8 @@ export const Layout: React.FC<LayoutProps> = ({ children }) => {
       {/* Main Content Area */}
       <main className="flex-grow relative z-10 w-full focus:outline-none pb-20 md:pb-0" id="main-content">
         {children}
+        {/* Compact Premium Footer CTA Strip */}
+        <FooterCtaStrip />
       </main>
 
       {/* Global Footer (Hidden on mobile per PWA specifications) */}

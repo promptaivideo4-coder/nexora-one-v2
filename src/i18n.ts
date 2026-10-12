@@ -17,7 +17,7 @@ i18n
     fallbackLng: 'en',
     keySeparator: '.',
     nsSeparator: false,
-    debug: true,
+    debug: false,
     interpolation: {
       escapeValue: false,
     },

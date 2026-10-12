@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Compass, Calendar, TrendingUp, Menu, ArrowUp, X, Sparkles, Shield, BookOpen, Layers, Grid, Award, Building2, FileText, Info } from 'lucide-react';
+import { prefetchRoute } from '../../utils/prefetchRoutes';
 
 export const MobileAppDock: React.FC = () => {
   const navigate = useNavigate();
@@ -61,6 +62,8 @@ export const MobileAppDock: React.FC = () => {
       <nav aria-label="Mobile Bottom App Navigation" className="fixed bottom-0 left-0 right-0 z-50 md:hidden bg-[#0A0A0A]/95 backdrop-blur-xl border-t border-[#DAAF37]/25 px-2 py-2 flex items-center justify-around shadow-[0_-10px_30px_rgba(0,0,0,0.8)] pb-[calc(8px+env(safe-area-inset-bottom))]">
         <button
           onClick={() => navigate('/ecosystem')}
+          onMouseEnter={() => prefetchRoute('/ecosystem')}
+          onTouchStart={() => prefetchRoute('/ecosystem')}
           className={`flex flex-col items-center justify-center w-16 py-1 text-[10px] font-heading font-medium transition-colors ${
             location.pathname === '/ecosystem' || location.pathname === '/' ? 'text-[#F4D03F]' : 'text-white/60 hover:text-white'
           }`}
@@ -71,6 +74,8 @@ export const MobileAppDock: React.FC = () => {
 
         <button
           onClick={() => navigate('/products')}
+          onMouseEnter={() => prefetchRoute('/products')}
+          onTouchStart={() => prefetchRoute('/products')}
           className={`flex flex-col items-center justify-center w-16 py-1 text-[10px] font-heading font-medium transition-colors ${
             location.pathname === '/products' ? 'text-[#F4D03F]' : 'text-white/60 hover:text-white'
           }`}
@@ -90,6 +95,8 @@ export const MobileAppDock: React.FC = () => {
 
         <button
           onClick={() => navigate('/investors')}
+          onMouseEnter={() => prefetchRoute('/investors')}
+          onTouchStart={() => prefetchRoute('/investors')}
           className={`flex flex-col items-center justify-center w-16 py-1 text-[10px] font-heading font-medium transition-colors ${
             location.pathname === '/investors' ? 'text-[#F4D03F]' : 'text-white/60 hover:text-white'
           }`}
@@ -136,6 +143,8 @@ export const MobileAppDock: React.FC = () => {
                 return (
                   <button
                     key={item.path}
+                    onMouseEnter={() => prefetchRoute(item.path)}
+                    onTouchStart={() => prefetchRoute(item.path)}
                     onClick={() => {
                       navigate(item.path);
                       setShowMoreSheet(false);

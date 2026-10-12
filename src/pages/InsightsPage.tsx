@@ -38,6 +38,9 @@ import {
   Percent,
   Handshake,
   FileText,
+  UtensilsCrossed,
+  Globe,
+  ShoppingBag,
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
 import { GlassCard } from '../components/common/GlassCard';
@@ -55,10 +58,7 @@ import valuationGuideImg from '../assets/images/valuation_guide_1791437485546.jp
 import equityDilutionGuideImg from '../assets/images/equity_dilution_guide_1791437767317.jpg';
 import fundingModelsGuideImg from '../assets/images/funding_models_guide_1791437956559.jpg';
 import dealStructuresGuideImg from '../assets/images/deal_structures_guide_1791438259562.jpg';
-
-const EcosystemCharts = React.lazy(() =>
-  import('../components/insights/EcosystemCharts').then((m) => ({ default: m.EcosystemCharts }))
-);
+import { EcosystemCharts } from '../components/insights/EcosystemCharts';
 
 export const InsightsPage: React.FC = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('All');
@@ -2376,17 +2376,221 @@ export const InsightsPage: React.FC = () => {
         </FadeIn>
       </section>
 
+      {/* PLATFORM BUILD VALUE & 9-MONTH EXECUTION PLAN (PAGE 10) */}
+      <section
+        id="execution-plan"
+        aria-label="Platform Build Value & 9-Month Execution Plan Section"
+        className="py-12 sm:py-16 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 border-b border-white/10"
+      >
+        <FadeIn>
+          {/* Header */}
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DAAF37]/10 border border-[#DAAF37]/35 text-[#F4D03F] text-xs font-heading font-semibold uppercase tracking-[0.2em] mb-3 shadow-[0_0_20px_rgba(218,175,55,0.15)]">
+              <Sparkles className="w-3.5 h-3.5 text-[#F4D03F]" />
+              Investor Snapshot · 9-Month Execution Plan
+            </div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl font-serif font-bold text-white tracking-tight leading-[1.15] mb-3">
+              Platform Build Value &{' '}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                Execution Plan
+              </span>
+            </h2>
+            <p className="text-sm sm:text-base text-white/75 font-sans max-w-2xl mx-auto leading-relaxed">
+              Transparent milestone budgeting, structured delivery phases and comprehensive website-only ecosystem scope.
+            </p>
+          </div>
+
+          {/* Budget Summary in 4 Clear Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 mb-12 sm:mb-16">
+            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-white/[0.05] via-[#141414] to-[#0A0A0A] border border-white/10 hover:border-[#DAAF37]/40 transition-all shadow-[0_8px_24px_rgba(0,0,0,0.5)]">
+              <span className="text-xs uppercase font-heading font-semibold tracking-wider text-white/60 block mb-2">
+                Recommended Execution Budget
+              </span>
+              <div className="text-2xl sm:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                ₹39.5 Lakh
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-white/[0.05] via-[#141414] to-[#0A0A0A] border border-white/10 hover:border-[#DAAF37]/40 transition-all shadow-[0_8px_24px_rgba(0,0,0,0.5)]">
+              <span className="text-xs uppercase font-heading font-semibold tracking-wider text-white/60 block mb-2">
+                Contingency and Change Reserve
+              </span>
+              <div className="text-2xl sm:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                ₹5.5 Lakh
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#DAAF37]/15 via-[#181818] to-[#0D0D0D] border-2 border-[#DAAF37]/60 shadow-[0_8px_32px_rgba(218,175,55,0.2)] ring-1 ring-[#DAAF37]/30">
+              <span className="text-xs uppercase font-heading font-semibold tracking-wider text-[#F4D03F] block mb-2">
+                Maximum Website-Only Project Cap
+              </span>
+              <div className="text-2xl sm:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                ₹45 Lakh
+              </div>
+            </div>
+
+            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-white/[0.05] via-[#141414] to-[#0A0A0A] border border-white/10 hover:border-[#DAAF37]/40 transition-all shadow-[0_8px_24px_rgba(0,0,0,0.5)]">
+              <span className="text-xs uppercase font-heading font-semibold tracking-wider text-white/60 block mb-2">
+                Total Delivery Plan
+              </span>
+              <div className="text-2xl sm:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                9 Months
+              </div>
+            </div>
+          </div>
+
+          {/* Visual 9-Month Roadmap */}
+          <div className="mb-12 sm:mb-16">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-2.5 h-2.5 rounded-full bg-[#DAAF37] animate-pulse" />
+              <h3 className="text-lg sm:text-xl font-heading font-bold text-white uppercase tracking-wider">
+                Visual 9-Month Execution Roadmap
+              </h3>
+            </div>
+
+            {/* Desktop Horizontal Timeline & Mobile Vertical Timeline */}
+            <div className="relative">
+              {/* Desktop Horizontal Flow Connector Track */}
+              <div className="hidden lg:block absolute top-[20px] left-[5%] right-[5%] h-[2px] bg-gradient-to-r from-[#DAAF37]/20 via-[#F4D03F]/60 to-[#DAAF37]/20 z-0" />
+
+              {/* Mobile Vertical Flow Connector Track */}
+              <div className="lg:hidden absolute top-4 bottom-4 left-[20px] w-[2px] bg-gradient-to-b from-[#DAAF37]/40 via-[#F4D03F]/60 to-[#DAAF37]/20 z-0" />
+
+              <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-5 relative z-10">
+                {[
+                  {
+                    period: 'Month 1–2',
+                    icon: <Globe className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'Core Ecosystem & Vertical Hub',
+                    desc: 'Nexora One main website, brand system, ecosystem hub and navigation.',
+                  },
+                  {
+                    period: 'Month 2–3',
+                    icon: <Sparkles className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'Beauty Booking & Salon Workflows',
+                    desc: 'Nexora Beauty customer booking experience, salon listing, service and booking workflows.',
+                  },
+                  {
+                    period: 'Month 3–4',
+                    icon: <Briefcase className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'Jobs Portal & Growth Partner',
+                    desc: 'Nexora Jobs portal and Nexora Growth Partner platform.',
+                  },
+                  {
+                    period: 'Month 4–5',
+                    icon: <Layers className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'White-Label Platform & Dashboard',
+                    desc: 'Nexora White-label platform and client dashboard.',
+                  },
+                  {
+                    period: 'Month 5–6',
+                    icon: <ShoppingBag className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'B2B Marketplace & RFQ',
+                    desc: 'Nexora B2B marketplace, seller profiles, product catalogues, enquiries and RFQ workflow.',
+                  },
+                  {
+                    period: 'Month 6–7',
+                    icon: <Building2 className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'Realty & Property Listings',
+                    desc: 'Nexora Realty property listings, filters, agent/owner dashboard and lead management.',
+                  },
+                  {
+                    period: 'Month 7–8',
+                    icon: <UtensilsCrossed className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'Food Ordering & Restaurant Workflows',
+                    desc: 'Nexora Food restaurant listing, menu, cart, checkout and order workflows.',
+                  },
+                  {
+                    period: 'Month 8–9',
+                    icon: <ShieldCheck className="w-4 h-4 text-[#F4D03F]" />,
+                    title: 'Customer Services & Production',
+                    desc: 'Nexora Costmor custom workflow module, ecosystem integration, quality assurance, security, optimization and production launch preparation.',
+                  },
+                ].map((phase, idx) => (
+                  <div
+                    key={idx}
+                    className="relative pl-12 lg:pl-0 pt-0 lg:pt-10 flex flex-col group"
+                  >
+                    {/* Gold Month Marker Node */}
+                    <div className="absolute left-0 lg:left-1/2 lg:-translate-x-1/2 top-0 flex items-center justify-center">
+                      <div className="w-10 h-10 rounded-full bg-[#141414] border-2 border-[#DAAF37] flex items-center justify-center shadow-[0_0_15px_rgba(218,175,55,0.4)] group-hover:scale-110 group-hover:border-[#F4D03F] transition-all">
+                        {phase.icon}
+                      </div>
+                    </div>
+
+                    {/* Phase Card */}
+                    <div className="p-5 rounded-2xl bg-gradient-to-b from-white/[0.05] via-[#121212] to-[#0A0A0A] border border-white/10 group-hover:border-[#DAAF37]/50 transition-all flex flex-col justify-between shadow-[0_8px_24px_rgba(0,0,0,0.5)] group-hover:shadow-[0_8px_30px_rgba(218,175,55,0.15)] flex-grow">
+                      <div>
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-[#DAAF37]/15 border border-[#DAAF37]/35 text-[#F4D03F] text-[11px] font-heading font-semibold uppercase tracking-wider mb-2.5">
+                          {phase.period}
+                        </div>
+                        <h4 className="text-sm font-heading font-bold text-white mb-2 group-hover:text-[#F4D03F] transition-colors leading-snug">
+                          {phase.title}
+                        </h4>
+                        <p className="text-xs text-white/70 font-sans leading-relaxed">
+                          {phase.desc}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* What the ₹45 Lakh Website-Only Cap Covers & Final Scope Disclaimer */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-start">
+            {/* Scope Coverage Card (7 Cols) */}
+            <div className="lg:col-span-7 p-6 sm:p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] via-[#121212] to-[#080808] border border-[#DAAF37]/35 shadow-[0_12px_40px_rgba(0,0,0,0.7)]">
+              <div className="flex items-center gap-2.5 mb-4 pb-3 border-b border-white/10">
+                <CheckCircle2 className="w-5 h-5 text-[#F4D03F] flex-shrink-0" />
+                <h3 className="text-lg sm:text-xl font-heading font-bold text-white">
+                  What the <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">₹45 Lakh Website-Only Cap</span> Covers
+                </h3>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-sans text-white/85">
+                {[
+                  'Main Nexora One ecosystem website',
+                  'Beauty booking and salon workflows',
+                  'Jobs and recruitment portal',
+                  'White-label SaaS/client system',
+                  'Growth Partner/referral dashboard',
+                  'B2B marketplace and lead workflow',
+                  'Real-estate listing and enquiry system',
+                  'Food ordering and restaurant workflows',
+                  'Customer service/custom Costmor module',
+                  'Shared backend, roles, dashboards and integrations',
+                  'UI/UX, testing, deployment and basic security readiness',
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2.5 p-2 rounded-xl bg-white/[0.02]">
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#DAAF37] flex-shrink-0 mt-2" />
+                    <span className="leading-relaxed">{item}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* Final Scope Disclaimer Card (5 Cols) */}
+            <div className="lg:col-span-5 p-6 sm:p-8 rounded-3xl bg-[#0F0F0F] border border-white/10 shadow-[0_12px_36px_rgba(0,0,0,0.6)]">
+              <div className="flex items-center gap-2 mb-3 text-[#DAAF37] text-xs font-heading font-semibold uppercase tracking-wider">
+                <ShieldCheck className="w-4 h-4 text-[#F4D03F]" />
+                Final Scope Disclaimer
+              </div>
+              <h4 className="text-base sm:text-lg font-heading font-bold text-white mb-3">
+                Execution Boundary & Conditions
+              </h4>
+              <p className="text-xs sm:text-sm font-sans text-white/70 leading-relaxed">
+                The ₹45 Lakh cap represents planned website and web application development only. It does not represent company valuation, revenue, profit, funding received or a guaranteed return. Native mobile apps, advertising, payment fees, SMS/OTP charges, maps/API usage, cloud costs and post-launch maintenance are separate.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+      </section>
+
       {/* 11.1 Data Visualization Section */}
       <section className="py-4 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <React.Suspense
-          fallback={
-            <div className="h-[280px] w-full flex items-center justify-center bg-white/[0.02] rounded-2xl border border-white/5">
-              <div className="w-8 h-8 rounded-full border-2 border-white/10 border-t-[#DAAF37] animate-spin" />
-            </div>
-          }
-        >
-          <EcosystemCharts />
-        </React.Suspense>
+        <EcosystemCharts />
       </section>
 
       {/* 11.2 Category Filter Chips Bar */}

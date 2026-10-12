@@ -7,6 +7,7 @@ import { NAV_ITEMS, HEADER_CTA } from '../../data/navigation';
 import { NexoraLogo } from '../common/NexoraLogo';
 import { Button } from '../common/Button';
 import { LanguageSelector } from './LanguageSelector';
+import { prefetchRoute } from '../../utils/prefetchRoutes';
 
 const PRIMARY_NAV_ITEMS = NAV_ITEMS.slice(0, 6); // Home, Ecosystem, Products, Beauty, Benefits, Verticals
 const MORE_NAV_ITEMS = NAV_ITEMS.slice(6); // Vision, Investors, Research, Investor Guide, About
@@ -118,6 +119,8 @@ export const SiteHeader: React.FC = React.memo(() => {
             <NavLink
               key={item.id}
               to={item.route}
+              onMouseEnter={() => prefetchRoute(item.route)}
+              onTouchStart={() => prefetchRoute(item.route)}
               className={({ isActive }) =>
                 `relative px-2 xl:px-2.5 py-1.5 text-[12px] xl:text-[13px] font-heading font-medium tracking-wide rounded-md transition-colors whitespace-nowrap ${
                   isActive
@@ -183,6 +186,8 @@ export const SiteHeader: React.FC = React.memo(() => {
                         <NavLink
                           key={item.id}
                           to={item.route}
+                          onMouseEnter={() => prefetchRoute(item.route)}
+                          onTouchStart={() => prefetchRoute(item.route)}
                           onClick={() => setMoreOpen(false)}
                           className={`flex items-center justify-between px-3 py-2 rounded-lg text-xs font-heading font-medium transition-all ${
                             isActive
@@ -252,6 +257,8 @@ export const SiteHeader: React.FC = React.memo(() => {
               <NavLink
                 key={item.id}
                 to={item.route}
+                onMouseEnter={() => prefetchRoute(item.route)}
+                onTouchStart={() => prefetchRoute(item.route)}
                 onClick={() => setMobileMenuOpen(false)}
                 className={({ isActive }) =>
                   `flex items-center justify-between px-4 py-3 rounded-xl border text-sm font-heading font-medium transition-all ${

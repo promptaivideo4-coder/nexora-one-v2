@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { prefetchRoute } from '../../utils/prefetchRoutes';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -66,7 +67,13 @@ export const Button: React.FC<ButtonProps> = ({
 
   if (to) {
     return (
-      <Link to={to} className={baseClasses} onClick={onClick}>
+      <Link
+        to={to}
+        className={baseClasses}
+        onClick={onClick}
+        onMouseEnter={() => prefetchRoute(to)}
+        onTouchStart={() => prefetchRoute(to)}
+      >
         {content}
       </Link>
     );

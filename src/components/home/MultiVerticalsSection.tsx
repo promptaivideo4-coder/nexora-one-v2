@@ -31,7 +31,7 @@ export const multiVerticalsData: VerticalItem[] = [
     title: 'Food',
     subtitle: 'Discover & Order',
     imageSrc: '/assets/vert-food.webp',
-    to: '/verticals#food',
+    to: 'https://nexora-food.templateapp67.chatgpt.site/',
   },
   {
     id: 'jobs',
@@ -101,19 +101,10 @@ export const MultiVerticalsSection: React.FC = () => {
 
           {/* Exactly 7 Tall Rounded Glassmorphic Cards in One Horizontal Row */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-4 lg:gap-3.5">
-            {multiVerticalsData.map((card, index) => (
-              <motion.div
-                key={card.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.06 }}
-                whileHover={{ y: -6 }}
-              >
-                <Link
-                  to={card.to}
-                  className="group relative flex flex-col justify-end aspect-[3/4.6] sm:aspect-[3/4.4] lg:aspect-[3/4.8] w-full rounded-2xl overflow-hidden border border-[#DAAF37]/30 hover:border-[#DAAF37]/90 bg-[#121212]/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(218,175,55,0.4)] transition-all duration-300 p-4 sm:p-4.5 block select-none"
-                >
+            {multiVerticalsData.map((card, index) => {
+              const isExternal = card.to.startsWith('http');
+              const cardContent = (
+                <>
                   {/* Cinematic Background Image */}
                   <img
                     src={card.imageSrc}
@@ -144,9 +135,39 @@ export const MultiVerticalsSection: React.FC = () => {
                       <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4 stroke-[2.5]" />
                     </div>
                   </div>
-                </Link>
-              </motion.div>
-            ))}
+                </>
+              );
+              const cardClass = "group relative flex flex-col justify-end aspect-[3/4.6] sm:aspect-[3/4.4] lg:aspect-[3/4.8] w-full rounded-2xl overflow-hidden border border-[#DAAF37]/30 hover:border-[#DAAF37]/90 bg-[#121212]/80 backdrop-blur-xl shadow-[0_10px_30px_rgba(0,0,0,0.6)] hover:shadow-[0_0_30px_rgba(218,175,55,0.4)] transition-all duration-300 p-4 sm:p-4.5 block select-none";
+
+              return (
+                <motion.div
+                  key={card.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: index * 0.06 }}
+                  whileHover={{ y: -6 }}
+                >
+                  {isExternal ? (
+                    <a
+                      href={card.to}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={cardClass}
+                    >
+                      {cardContent}
+                    </a>
+                  ) : (
+                    <Link
+                      to={card.to}
+                      className={cardClass}
+                    >
+                      {cardContent}
+                    </Link>
+                  )}
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </div>

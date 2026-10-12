@@ -324,6 +324,83 @@ export const VerticalsPage: React.FC = () => {
         </div>
       </section>
 
+      {/* Platform Build & Integration Value Highlight Card (Page 06) */}
+      <section className="py-8 sm:py-10 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+        <GlassCard
+          className="p-6 sm:p-8 lg:p-10 border border-[#DAAF37]/40 bg-gradient-to-b from-[#141414] via-[#0E0E0E] to-[#080808] relative overflow-hidden shadow-[0_16px_48px_rgba(0,0,0,0.85),0_0_35px_rgba(218,175,55,0.12)]"
+          glow="gold"
+        >
+          {/* Subtle Golden Radial Glow */}
+          <div className="absolute top-0 right-0 w-[450px] h-[350px] bg-gradient-to-bl from-[#DAAF37]/15 via-[#F4D03F]/5 to-transparent blur-3xl pointer-events-none" />
+
+          <div className="relative z-10 flex flex-col lg:flex-row lg:items-center justify-between gap-8">
+            <div className="max-w-2xl">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DAAF37]/10 border border-[#DAAF37]/35 text-[#F4D03F] text-xs font-heading font-semibold uppercase tracking-[0.2em] mb-4">
+                <Sparkles className="w-3.5 h-3.5 text-[#F4D03F]" />
+                Platform Build & Integration Value
+              </div>
+
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-serif font-bold text-white tracking-tight leading-tight mb-3">
+                One Connected Ecosystem.{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                  One Strategic Build Plan.
+                </span>
+              </h2>
+
+              <p className="text-sm sm:text-base text-white/80 font-sans leading-relaxed">
+                Nexora One combines{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37] font-semibold">
+                  Beauty, Jobs, White-label SaaS, Growth Partner, B2B Marketplace, Real Estate, Food Delivery and Customer Services
+                </span>{' '}
+                into one connected web ecosystem.
+              </p>
+            </div>
+
+            <div className="flex flex-col sm:flex-row lg:flex-col xl:flex-row items-stretch lg:items-end xl:items-center gap-4 flex-shrink-0">
+              <Button
+                to="/investor-guide#execution-plan"
+                variant="primary"
+                size="md"
+                icon={<ArrowRight className="w-4 h-4" />}
+                className="whitespace-nowrap shadow-[0_4px_25px_rgba(218,175,55,0.4)]"
+              >
+                View Full Investor Guide →
+              </Button>
+            </div>
+          </div>
+
+          {/* Value Points */}
+          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-8 pt-8 border-t border-white/10">
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#DAAF37]/40 transition-colors">
+              <span className="text-[11px] uppercase font-heading font-semibold text-white/50 tracking-wider block mb-1">
+                Estimated Platform Value
+              </span>
+              <span className="text-2xl sm:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                ₹39.5 Lakh
+              </span>
+            </div>
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-gradient-to-b from-[#DAAF37]/15 via-white/[0.02] to-transparent border border-[#DAAF37]/60 shadow-[0_8px_30px_rgba(218,175,55,0.15)] ring-1 ring-[#DAAF37]/30">
+              <span className="text-[11px] uppercase font-heading font-semibold text-[#F4D03F] tracking-wider block mb-1">
+                Maximum 9-Month Execution Cap
+              </span>
+              <span className="text-2xl sm:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                ₹45 Lakh
+              </span>
+            </div>
+
+            <div className="p-4 sm:p-5 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-[#DAAF37]/40 transition-colors sm:col-span-2 lg:col-span-1">
+              <span className="text-[11px] uppercase font-heading font-semibold text-white/50 tracking-wider block mb-1">
+                Planned Delivery Timeline
+              </span>
+              <span className="text-2xl sm:text-3xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
+                9 Months
+              </span>
+            </div>
+          </div>
+        </GlassCard>
+      </section>
+
       {/* Multi-Vertical Repeatable Architecture Pattern (Architecture §15) */}
       <section className="py-10 sm:py-12 max-w-[1200px] mx-auto px-4 sm:px-6 lg:px-8 border-t border-white/[0.08]">
         <GlassCard className="p-6 sm:p-8 text-center" glow="subtle">

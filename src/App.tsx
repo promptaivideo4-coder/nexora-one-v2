@@ -3,37 +3,28 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useLocation } from 'react-router-dom';
-import { AnimatePresence, motion, useReducedMotion } from 'framer-motion';
+import { motion, useReducedMotion } from 'framer-motion';
 import { HelmetProvider } from 'react-helmet-async';
 import { Layout } from './components/layout/Layout';
 import { LightboxProvider } from './components/common/LightboxProvider';
 import { LanguageProvider } from './contexts/LanguageContext';
 import { SEO } from './components/common/SEO';
 
-// Code-split pages for faster initial load and optimized bundle distribution
-const HomePage = lazy(() => import('./pages/HomePage').then((m) => ({ default: m.HomePage })));
-const VisionPage = lazy(() => import('./pages/VisionPage').then((m) => ({ default: m.VisionPage })));
-const EcosystemPage = lazy(() => import('./pages/EcosystemPage').then((m) => ({ default: m.EcosystemPage })));
-const BenefitsPage = lazy(() => import('./pages/BenefitsPage').then((m) => ({ default: m.BenefitsPage })));
-const BeautyPage = lazy(() => import('./pages/BeautyPage').then((m) => ({ default: m.BeautyPage })));
-const VerticalsPage = lazy(() => import('./pages/VerticalsPage').then((m) => ({ default: m.VerticalsPage })));
-const ProductsPage = lazy(() => import('./pages/ProductsPage').then((m) => ({ default: m.ProductsPage })));
-const ResearchPage = lazy(() => import('./pages/ResearchPage').then((m) => ({ default: m.ResearchPage })));
-const AboutPage = lazy(() => import('./pages/AboutPage').then((m) => ({ default: m.AboutPage })));
-const InsightsPage = lazy(() => import('./pages/InsightsPage').then((m) => ({ default: m.InsightsPage })));
-const InvestorsPage = lazy(() => import('./pages/InvestorsPage').then((m) => ({ default: m.InvestorsPage })));
-const PoliciesPage = lazy(() => import('./pages/PoliciesPage').then((m) => ({ default: m.PoliciesPage })));
-
-const RouteLoadingFallback = () => (
-  <div className="w-full min-h-[50vh] flex items-center justify-center py-24" aria-label="Loading page content">
-    <div className="relative flex items-center justify-center">
-      <div className="w-10 h-10 rounded-full border-2 border-white/10 border-t-[#DAAF37] animate-spin" />
-      <div className="absolute w-2 h-2 rounded-full bg-[#F4D03F] shadow-[0_0_10px_rgba(244,208,63,0.8)]" />
-    </div>
-  </div>
-);
+// Direct static page imports to eliminate any loading fallback, buffering spinner, or suspense delay
+import { HomePage } from './pages/HomePage';
+import { VisionPage } from './pages/VisionPage';
+import { EcosystemPage } from './pages/EcosystemPage';
+import { BenefitsPage } from './pages/BenefitsPage';
+import { BeautyPage } from './pages/BeautyPage';
+import { VerticalsPage } from './pages/VerticalsPage';
+import { ProductsPage } from './pages/ProductsPage';
+import { ResearchPage } from './pages/ResearchPage';
+import { AboutPage } from './pages/AboutPage';
+import { InsightsPage } from './pages/InsightsPage';
+import { InvestorsPage } from './pages/InvestorsPage';
+import { PoliciesPage } from './pages/PoliciesPage';
 
 function AnimatedRoutes() {
   const location = useLocation();
@@ -42,17 +33,14 @@ function AnimatedRoutes() {
   return (
     <>
       <SEO />
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={location.pathname}
-          initial={shouldReduceMotion ? false : { opacity: 0, y: 8 }}
-          animate={shouldReduceMotion ? undefined : { opacity: 1, y: 0 }}
-          exit={shouldReduceMotion ? undefined : { opacity: 0, y: -8 }}
-          transition={{ duration: 0.28, ease: [0.25, 0.1, 0.25, 1.0] }}
-          className="w-full flex-grow flex flex-col"
-        >
-          <Suspense fallback={<RouteLoadingFallback />}>
-            <Routes location={location} key={location.pathname}>
+      <motion.div
+        key={location.pathname}
+        initial={shouldReduceMotion ? false : { opacity: 0 }}
+        animate={shouldReduceMotion ? undefined : { opacity: 1 }}
+        transition={{ duration: 0.1, ease: 'easeOut' }}
+        className="w-full flex-grow flex flex-col"
+      >
+        <Routes location={location} key={location.pathname}>
               <Route path="/" element={<HomePage />} />
               <Route path="/vision-mission" element={<VisionPage />} />
               <Route path="/ecosystem" element={<EcosystemPage />} />
@@ -63,6 +51,7 @@ function AnimatedRoutes() {
               <Route path="/market-research" element={<ResearchPage />} />
               <Route path="/about" element={<AboutPage />} />
               <Route path="/insights" element={<InsightsPage />} />
+              <Route path="/investor-guide" element={<InsightsPage />} />
               <Route path="/investors" element={<InvestorsPage />} />
 
               {/* Legal & Policy Routes */}
@@ -84,9 +73,7 @@ function AnimatedRoutes() {
 
               <Route path="*" element={<Navigate to="/" replace />} />
             </Routes>
-          </Suspense>
         </motion.div>
-      </AnimatePresence>
     </>
   );
 }

@@ -723,6 +723,8 @@ export const BenefitsPage: React.FC = () => {
                     <img 
                       src={salonOwnerCinematic}
                       alt="Discovery Layer Visualization"
+                      loading="lazy"
+                      decoding="async"
                       className="w-full h-auto object-cover opacity-90 group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-6">
@@ -773,6 +775,8 @@ export const BenefitsPage: React.FC = () => {
                       <img 
                         src={salon.img} 
                         alt={salon.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover opacity-60 group-hover:opacity-80 group-hover:scale-110 transition-all duration-700"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent p-6 flex flex-col justify-end">
@@ -1549,7 +1553,7 @@ export const BenefitsPage: React.FC = () => {
                   </p>
                 </div>
               </div>
-              <Button to="/products#professional-tools" variant="primary" size="md">
+              <Button href="https://nexora-salon-job-portal.templateapp67.chatgpt.site/" variant="primary" size="md" icon={<ExternalLink className="w-4 h-4" />}>
                 Join as Professional
               </Button>
             </div>
@@ -1618,7 +1622,7 @@ export const BenefitsPage: React.FC = () => {
 
             {/* Bottom CTA */}
             <div className="mt-10 flex justify-center lg:justify-start">
-              <Button to="/products#professional-tools" variant="secondary" size="lg" className="w-full sm:w-auto">
+              <Button href="https://nexora-salon-job-portal.templateapp67.chatgpt.site/" variant="secondary" size="lg" className="w-full sm:w-auto" icon={<ExternalLink className="w-4 h-4" />}>
                 Explore Professional Tools
               </Button>
             </div>

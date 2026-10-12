@@ -161,13 +161,13 @@ const AIIcon: React.FC = () => (
 );
 
 const verticalsData = [
-  { id: 'beauty', label: 'Beauty', icon: <BeautyIcon /> },
-  { id: 'real-estate', label: 'Real Estate', icon: <RealEstateIcon /> },
-  { id: 'food', label: 'Food', icon: <FoodIcon /> },
-  { id: 'jobs', label: 'Jobs', icon: <JobsIcon /> },
-  { id: 'commerce', label: 'Commerce', icon: <CommerceIcon /> },
-  { id: 'advertising', label: 'Advertising', icon: <AdvertisingIcon /> },
-  { id: 'ai', label: 'AI', icon: <AIIcon /> },
+  { id: 'beauty', label: 'Beauty', icon: <BeautyIcon />, href: '/verticals#beauty' },
+  { id: 'real-estate', label: 'Real Estate', icon: <RealEstateIcon />, href: '/verticals#real-estate' },
+  { id: 'food', label: 'Food', icon: <FoodIcon />, href: 'https://nexora-food.templateapp67.chatgpt.site/' },
+  { id: 'jobs', label: 'Jobs', icon: <JobsIcon />, href: '/verticals#jobs' },
+  { id: 'commerce', label: 'Commerce', icon: <CommerceIcon />, href: '/verticals#commerce' },
+  { id: 'advertising', label: 'Advertising', icon: <AdvertisingIcon />, href: '/verticals#advertising' },
+  { id: 'ai', label: 'AI', icon: <AIIcon />, href: '/verticals#ai' },
 ];
 
 export const EcosystemOverview: React.FC = () => {
@@ -482,20 +482,41 @@ export const EcosystemOverview: React.FC = () => {
           >
             <div className="rounded-2xl md:rounded-full bg-gradient-to-r from-[#181818]/90 via-[#121212]/95 to-[#181818]/90 border border-[#DAAF37]/30 backdrop-blur-xl px-4 sm:px-8 py-3 sm:py-3.5 shadow-[0_12px_40px_rgba(0,0,0,0.7)]">
               <div className="grid grid-cols-4 sm:grid-cols-7 gap-3 sm:gap-2 items-center justify-between">
-                {verticalsData.map((vert) => (
-                  <Link
-                    key={vert.id}
-                    to={`/verticals#${vert.id}`}
-                    className="flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white/[0.05] transition-all group cursor-pointer text-center"
-                  >
-                    <div className="mb-1.5 transition-transform duration-200 group-hover:scale-115 drop-shadow-[0_0_8px_rgba(218,175,55,0.4)]">
-                      {vert.icon}
-                    </div>
-                    <span className="text-[11px] sm:text-xs font-heading font-medium text-white/80 group-hover:text-[#F4D03F] transition-colors whitespace-nowrap">
-                      {vert.label}
-                    </span>
-                  </Link>
-                ))}
+                {verticalsData.map((vert) => {
+                  const href = vert.href || `/verticals#${vert.id}`;
+                  const isExternal = href.startsWith('http');
+                  const innerContent = (
+                    <>
+                      <div className="mb-1.5 transition-transform duration-200 group-hover:scale-115 drop-shadow-[0_0_8px_rgba(218,175,55,0.4)]">
+                        {vert.icon}
+                      </div>
+                      <span className="text-[11px] sm:text-xs font-heading font-medium text-white/80 group-hover:text-[#F4D03F] transition-colors whitespace-nowrap">
+                        {vert.label}
+                      </span>
+                    </>
+                  );
+                  const className = "flex flex-col items-center justify-center p-2 rounded-xl hover:bg-white/[0.05] transition-all group cursor-pointer text-center";
+
+                  return isExternal ? (
+                    <a
+                      key={vert.id}
+                      href={href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={className}
+                    >
+                      {innerContent}
+                    </a>
+                  ) : (
+                    <Link
+                      key={vert.id}
+                      to={href}
+                      className={className}
+                    >
+                      {innerContent}
+                    </Link>
+                  );
+                })}
               </div>
             </div>
           </div>

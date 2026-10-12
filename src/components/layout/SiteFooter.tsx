@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { FOOTER_SECTIONS } from '../../data/navigation';
 import { NexoraLogo } from '../common/NexoraLogo';
 import { ArrowUpRight } from 'lucide-react';
+import { prefetchRoute } from '../../utils/prefetchRoutes';
 
 export const SiteFooter: React.FC = React.memo(() => {
   const { t } = useTranslation();
@@ -46,6 +47,8 @@ export const SiteFooter: React.FC = React.memo(() => {
                 <li key={item.key}>
                   <Link
                     to={item.href}
+                    onMouseEnter={() => prefetchRoute(item.href)}
+                    onTouchStart={() => prefetchRoute(item.href)}
                     className="text-white/65 hover:text-[#F4D03F] transition-colors inline-flex items-center gap-1 group"
                   >
                     <span>{t(`footer.sections.${item.key}`)}</span>
@@ -68,6 +71,8 @@ export const SiteFooter: React.FC = React.memo(() => {
                 <li key={item.key}>
                   <Link
                     to={item.href}
+                    onMouseEnter={() => prefetchRoute(item.href)}
+                    onTouchStart={() => prefetchRoute(item.href)}
                     className="text-white/65 hover:text-[#F4D03F] transition-colors inline-flex items-center gap-1 group"
                   >
                     <span>{t(`footer.sections.${item.key}`)}</span>
@@ -105,6 +110,8 @@ export const SiteFooter: React.FC = React.memo(() => {
                   <li key={item.key}>
                     <Link
                       to={item.href}
+                      onMouseEnter={() => prefetchRoute(item.href)}
+                      onTouchStart={() => prefetchRoute(item.href)}
                       className="text-white/65 hover:text-[#F4D03F] transition-colors inline-flex items-center gap-1 group"
                     >
                       <span>{t(`footer.sections.${item.key}`)}</span>
@@ -152,6 +159,8 @@ export const SiteFooter: React.FC = React.memo(() => {
                 <li key={item.key}>
                   <Link
                     to={item.href}
+                    onMouseEnter={() => prefetchRoute(item.href)}
+                    onTouchStart={() => prefetchRoute(item.href)}
                     className="text-white/65 hover:text-[#F4D03F] transition-colors inline-flex items-center gap-1 group"
                   >
                     <span>{t(`footer.sections.${item.key}`)}</span>

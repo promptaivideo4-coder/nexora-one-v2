@@ -39,8 +39,8 @@ export const STAKEHOLDERS: StakeholderDetail[] = [
       'Earn loyalty',
       'Return',
     ],
-    ctaLabel: 'Explore Beauty Directory',
-    ctaTarget: 'https://beauty-directory-zeta.vercel.app/',
+    ctaLabel: 'Explore GlowSlot App',
+    ctaTarget: 'https://glow-slot-virid.vercel.app/',
   },
   {
     id: 'salon-owner',
@@ -116,7 +116,7 @@ export const STAKEHOLDERS: StakeholderDetail[] = [
       'Network Growth',
     ],
     ctaLabel: 'Join Growth Partner',
-    ctaTarget: 'https://pink-growth-partner.vercel.app/',
+    ctaTarget: 'https://nexora-growth-partner.templateapp67.chatgpt.site/',
   },
   {
     id: 'b2b',
