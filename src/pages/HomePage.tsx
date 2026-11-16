@@ -1,372 +1,209 @@
-import React, { useRef } from 'react';
-import { useTranslation } from 'react-i18next';
-import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 import {
-  ArrowRight,
-  Sparkles,
-} from 'lucide-react';
-import { Button } from '../components/common/Button';
-import { GlassCard } from '../components/common/GlassCard';
-import { SectionHeading } from '../components/common/SectionHeading';
-import { SectionDivider } from '../components/common/SectionDivider';
-import { FadeIn } from '../components/common/MotionWrapper';
-import { InteractiveImage } from '../components/common/InteractiveImage';
-import { EcosystemOverview } from '../components/home/EcosystemOverview';
-import { MultiVerticalsSection } from '../components/home/MultiVerticalsSection';
-import { TrustDifferentiationSection } from '../components/home/TrustDifferentiationSection';
-import { HomeCTASection } from '../components/home/HomeCTASection';
-
-export const HomePage: React.FC = () => {
-  const { t } = useTranslation();
-  const heroRef = useRef<HTMLElement>(null);
-  const prefersReducedMotion = useReducedMotion();
-
-  const { scrollYProgress } = useScroll({
-    target: heroRef,
-    offset: ['start start', 'end start'],
-  });
-
-  // Subtle, gentle parallax scroll transforms
-  const visualY = useTransform(scrollYProgress, [0, 1], ['0%', '15%']);
-  const visualScale = useTransform(scrollYProgress, [0, 1], [1, 1.04]);
-  const glowY = useTransform(scrollYProgress, [0, 1], ['0%', '24%']);
-  const glowOpacity = useTransform(scrollYProgress, [0, 0.7, 1], [1, 0.75, 0.2]);
-  const particlesY = useTransform(scrollYProgress, [0, 1], ['0%', '-18%']);
-
+  Page,
+  Hero,
+  Section,
+  Card,
+  Action,
+  FAQ,
+  useCopy,
+} from "../components/journey/Page";
+import { SalonDemo } from "../components/journey/SalonDemo";
+export function HomePage() {
+  const c = useCopy();
   return (
-    <div className="w-full">
-      {/* 4.1 Hero Section - Seamless Full-Bleed Cinematic Background */}
-      <section ref={heroRef} className="relative min-h-[500px] lg:min-h-[560px] flex items-center pt-4 pb-6 sm:pt-6 sm:pb-8 lg:pt-6 lg:pb-8 overflow-hidden bg-[#0A0A0A]">
-        {/* Seamless Hero Cinematic Visual Layer (Laptop + Phone + Woman + Glowing Globe) */}
-        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
-          {/* Main Visual Image aligned to right with subtle parallax translation & depth */}
-          <motion.div
-            style={prefersReducedMotion ? {} : { y: visualY, scale: visualScale }}
-            className="absolute right-0 top-0 bottom-0 w-full lg:w-[65%] xl:w-[60%] 2xl:w-[58%] h-full origin-top-right will-change-transform"
-          >
-            <InteractiveImage
-              src="/assets/hero-devices.webp"
-              alt="Nexora One connected digital ecosystem"
-              className="w-full h-full object-cover object-center lg:object-right-center scale-100"
-              loading="eager"
-            />
-            {/* Seamless Left Fade into Deep Black #0A0A0A */}
-            <div className="absolute inset-y-0 left-0 w-2/5 bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent pointer-events-none" />
-            {/* Seamless Top & Bottom Feathering into Deep Black */}
-            <div className="absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-[#0A0A0A] via-[#0A0A0A]/60 to-transparent pointer-events-none" />
-            <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/80 to-transparent pointer-events-none" />
-          </motion.div>
-
-          {/* Left Text Shadow Gradient to guarantee crystal-clear typography readability */}
-          <div className="absolute inset-y-0 left-0 w-full lg:w-[58%] bg-gradient-to-r from-[#0A0A0A] via-[#0A0A0A]/95 to-transparent z-1" />
-
-          {/* Golden Ambient Rim Lighting & Glow Ribbons with multi-rate parallax depth */}
-          <motion.div
-            style={prefersReducedMotion ? {} : { y: glowY, opacity: glowOpacity }}
-            className="absolute top-1/4 right-[12%] w-[600px] h-[600px] bg-radial from-[#DAAF37]/20 via-[#DAAF37]/5 to-transparent blur-[130px] pointer-events-none will-change-transform"
-          />
-          <motion.div
-            style={prefersReducedMotion ? {} : { y: glowY, opacity: glowOpacity }}
-            className="absolute bottom-0 right-[20%] w-[500px] h-[300px] bg-radial from-[#DAAF37]/15 to-transparent blur-[100px] pointer-events-none will-change-transform"
-          />
-
-          {/* Subtle floating golden dust particles moving in gentle counter-depth */}
-          <motion.div
-            style={prefersReducedMotion ? {} : { y: particlesY }}
-            className="absolute inset-0 pointer-events-none will-change-transform opacity-60"
-          >
-            <div className="absolute top-[20%] right-[35%] w-1.5 h-1.5 rounded-full bg-[#F4D03F]/60 blur-[0.5px]" />
-            <div className="absolute top-[45%] right-[22%] w-1 h-1 rounded-full bg-[#DAAF37]/70 blur-[0.5px]" />
-            <div className="absolute top-[60%] right-[42%] w-2 h-2 rounded-full bg-[#F4D03F]/40 blur-[1px]" />
-            <div className="absolute top-[30%] right-[15%] w-1.5 h-1.5 rounded-full bg-[#DAAF37]/50 blur-[0.5px]" />
-          </motion.div>
+    <Page>
+      <Hero
+        eyebrow={c(
+          "BEAUTY FIRST · PRODUCT DEMOS AVAILABLE",
+          "BEAUTY FIRST · PRODUCT DEMOS उपलब्ध",
+        )}
+        title={c(
+          "Your salon. Your customers. One simpler workflow.",
+          "आपका salon। आपके customers। काम संभालने का आसान तरीका।",
+        )}
+        description={c(
+          "Nexora One is building tools for salon appointments, customer records and follow-up, alongside a customer booking experience. Start with the demo that fits you.",
+          "Nexora One salon appointments, customer records और follow-up के tools बना रहा है, साथ में customer booking experience भी। अपने काम का demo चुनकर शुरुआत करें।",
+        )}
+      >
+        <div className="actions">
+          <Action to="/for-salons#demo">
+            {c("Try the salon demo", "Salon demo देखें")}
+          </Action>
+          <Action to="/for-customers" secondary>
+            {c("I want to book a salon", "मुझे salon book करना है")}
+          </Action>
         </div>
-
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center min-h-[420px] lg:min-h-[480px]">
-            {/* Left Column: Text & CTAs */}
-            <FadeIn direction="up" className="lg:col-span-7 xl:col-span-6 flex flex-col items-start text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DAAF37]/10 border border-[#DAAF37]/40 text-[#F4D03F] text-xs font-heading font-medium tracking-wider uppercase mb-4 shadow-[0_0_15px_rgba(218,175,55,0.15)]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#F4D03F] animate-pulse" />
-                {t('home.hero.badge')}
-              </div>
-
-              <h1 className="text-3xl sm:text-5xl lg:text-6xl xl:text-7xl font-serif font-bold tracking-tight text-[#F5F5F5] leading-[1.08] mb-3">
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFFFFF] via-[#F4D03F] to-[#DAAF37]">
-                  {t('home.hero.title')}
-                </span>
-                <span className="block text-xl sm:text-3xl lg:text-4xl font-serif font-normal text-white/90 mt-1.5">
-                  {t('home.hero.subtitle')}
-                </span>
-              </h1>
-
-              <p className="text-xs sm:text-lg text-white/75 font-sans leading-relaxed max-w-xl mb-6">
-                {t('home.hero.description')}
-              </p>
-
-              <div className="flex flex-wrap items-center gap-4">
-                <Button
-                  to="/ecosystem"
-                  variant="primary"
-                  size="lg"
-                  icon={<ArrowRight className="w-4 h-4" />}
-                >
-                  {t('home.hero.cta.explore')}
-                </Button>
-                <Button
-                  to="/products"
-                  variant="secondary"
-                  size="lg"
-                >
-                  {t('home.hero.cta.products')}
-                </Button>
-              </div>
-
-              {/* Mobile-only visual integration (seamless without card/border/box) */}
-              <div className="lg:hidden relative w-full mt-6 pointer-events-auto">
-                <div className="relative w-full aspect-[16/9] overflow-hidden">
-                  <InteractiveImage
-                    src="/assets/hero-devices.webp"
-                    alt="Nexora One connected digital ecosystem"
-                    className="w-full h-full object-cover object-center"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-transparent to-[#0A0A0A]/40 pointer-events-none" />
-                  <div className="absolute inset-0 bg-gradient-to-r from-[#0A0A0A]/60 via-transparent to-[#0A0A0A]/40 pointer-events-none" />
-                </div>
-              </div>
-            </FadeIn>
-
-            {/* Right Column: Spacework on desktop allowing the integrated background visual to breathe */}
-            <div className="hidden lg:block lg:col-span-5 xl:col-span-6 min-h-[420px] pointer-events-none" aria-hidden="true" />
-          </div>
-        </div>
-      </section>
-
-      {/* 02. Ecosystem Overview Section (matching approved visual reference) */}
-      <EcosystemOverview />
-
-      {/* 02.5 Platform Build & Integration Value Highlight Section (Home Page) */}
-      <section className="py-8 sm:py-12 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <GlassCard
-          className="p-6 sm:p-10 lg:p-12 border-2 border-[#DAAF37]/45 bg-gradient-to-b from-[#161616] via-[#0F0F0F] to-[#070707] shadow-[0_20px_60px_rgba(0,0,0,0.9),0_0_35px_rgba(218,175,55,0.12)] relative overflow-hidden"
-          glow="gold"
-        >
-          {/* Ambient Gold Radial Glow */}
-          <div className="absolute top-0 right-1/4 w-[500px] h-[300px] bg-gradient-to-b from-[#DAAF37]/15 via-[#F4D03F]/5 to-transparent blur-[120px] pointer-events-none rounded-full" />
-
-          {/* Small Label */}
-          <div className="relative z-10 flex flex-wrap items-center justify-between gap-3 mb-3">
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#DAAF37]/10 border border-[#DAAF37]/40 text-[#F4D03F] text-xs font-heading font-semibold uppercase tracking-[0.2em] shadow-[0_0_15px_rgba(218,175,55,0.15)]">
-              <Sparkles className="w-3.5 h-3.5 text-[#F4D03F]" />
-              Investor Snapshot · 9-Month Execution Plan
-            </span>
-          </div>
-
-          {/* Heading */}
-          <h2 className="relative z-10 text-2xl sm:text-4xl lg:text-5xl font-serif font-bold text-white tracking-tight leading-[1.15] mb-5">
-            The Value Behind the{' '}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
-              Nexora One Ecosystem
-            </span>
-          </h2>
-
-          {/* Main Highlighted Content */}
-          <div className="relative z-10 max-w-4xl space-y-3 text-sm sm:text-base md:text-lg text-white/85 font-sans leading-relaxed mb-6">
+        <p className="small-note">
+          {c(
+            "Demo access is not a claim of commercial launch or verified business results.",
+            "Demo उपलब्ध होना commercial launch या verified business results का दावा नहीं है।",
+          )}
+        </p>
+      </Hero>
+      <Section
+        title={c("Choose your starting point", "आप कहाँ से शुरुआत करना चाहते हैं?")}
+      >
+        <div className="card-grid two">
+          <Card title={c("For salon owners", "Salon owners के लिए")}>
             <p>
-              Nexora One is a multi-vertical digital ecosystem comprising{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37] font-semibold">
-                Beauty, Jobs, White-label SaaS, Growth Partner, B2B Marketplace, Real Estate, Food Delivery and Customer Services
-              </span>
-              .
+              {c(
+                "See how appointments, customer records and follow-up fit into your day.",
+                "देखें कि appointments, customer records और follow-up आपके रोज के काम में कैसे मदद कर सकते हैं।",
+              )}
             </p>
+            <Action to="/for-salons">
+              {c("Explore salon tools", "Salon tools समझें")}
+            </Action>
+          </Card>
+          <Card title={c("For customers", "Customers के लिए")}>
             <p>
-              The web platform’s estimated build and production integration value is approximately{' '}
-              <span className="text-xl sm:text-2xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37]">
-                ₹39.5 lakh
-              </span>
-              , with a planned maximum execution cap of{' '}
-              <span className="text-2xl sm:text-3xl font-serif font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF6D6] via-[#F4D03F] to-[#DAAF37]">
-                ₹45 lakh
-              </span>
-              , excluding native mobile applications and recurring third-party operating costs.
+              {c(
+                "Explore the booking demo and check service availability before making plans.",
+                "Booking demo देखें और plan बनाने से पहले service availability की पुष्टि करें।",
+              )}
             </p>
-          </div>
-
-          {/* Small Disclaimer Under Main Text */}
-          <p className="relative z-10 text-xs text-white/55 font-sans leading-relaxed max-w-3xl mb-8 p-3.5 rounded-xl bg-white/[0.02] border border-white/10">
-            Scope includes website and web application development, product integration, dashboards, workflows, testing and production readiness. Native mobile apps, transaction fees, marketing and recurring third-party service costs are separate.
-          </p>
-
-          {/* Three Highlight Metric Cards */}
-          <div className="relative z-10 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-8">
-            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent border border-[#DAAF37]/35 shadow-[0_8px_24px_rgba(0,0,0,0.5)]">
-              <span className="text-xs uppercase font-heading font-semibold tracking-wider text-white/60 block mb-2">
-                1. Estimated Platform Value
-              </span>
-              <div className="text-3xl sm:text-4xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37] tracking-tight">
-                ₹39.5 Lakh
-              </div>
-            </div>
-
-            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-[#DAAF37]/15 via-white/[0.02] to-transparent border border-[#DAAF37]/60 shadow-[0_8px_30px_rgba(218,175,55,0.15)] ring-1 ring-[#DAAF37]/30">
-              <span className="text-xs uppercase font-heading font-semibold tracking-wider text-[#F4D03F] block mb-2">
-                2. Maximum Execution Cap
-              </span>
-              <div className="text-3xl sm:text-4xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37] tracking-tight">
-                ₹45 Lakh
-              </div>
-            </div>
-
-            <div className="p-5 sm:p-6 rounded-2xl bg-gradient-to-b from-white/[0.06] via-white/[0.02] to-transparent border border-[#DAAF37]/35 shadow-[0_8px_24px_rgba(0,0,0,0.5)]">
-              <span className="text-xs uppercase font-heading font-semibold tracking-wider text-white/60 block mb-2">
-                3. Delivery Timeline
-              </span>
-              <div className="text-3xl sm:text-4xl font-serif font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#FFF2B2] via-[#F4D03F] to-[#DAAF37] tracking-tight">
-                9 Months
-              </div>
-            </div>
-          </div>
-
-          {/* CTA Buttons */}
-          <div className="relative z-10 flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-6 border-t border-white/10">
-            <Button
-              to="/investor-guide#execution-plan"
-              variant="primary"
-              size="lg"
-              icon={<ArrowRight className="w-4 h-4" />}
-              className="shadow-[0_6px_28px_rgba(218,175,55,0.45)]"
-            >
-              View Investor Guide →
-            </Button>
-            <Button
-              to="/verticals"
-              variant="secondary"
-              size="lg"
-            >
-              Explore Our Verticals →
-            </Button>
-          </div>
-        </GlassCard>
-      </section>
-
-      {/* Who Benefits Preview Section (per 17_VISUAL_REFERENCE §4.6) */}
-      <section className="pt-4 sm:pt-6 pb-2 sm:pb-3 border-t border-white/[0.08] bg-white/[0.01]">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow={t('home.benefits.eyebrow')}
-            title={t('home.benefits.title')}
-            titleAccent={t('home.benefits.titleAccent')}
-            subtitle={t('home.benefits.subtitle')}
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6 gap-4 sm:gap-5 mb-5 sm:mb-6">
-            {[
-              {
-                title: 'Customers',
-                tag: 'Discover. Book. Save. Earn. Repeat.',
-                desc: 'Find trusted local businesses, book instantly, and collect rewards without juggling disjointed apps.',
-                route: '/who-benefits#customer',
-              },
-              {
-                title: 'Business Owners',
-                tag: 'Build Your Database. Retain Customers.',
-                desc: 'Add your own customers, save visit history, and let Nexora automatically send 30-day recall and rebooking reminders.',
-                route: '/who-benefits#salon-owner',
-              },
-              {
-                title: 'Growth Partners',
-                tag: 'Expansion Engine. Track Progress.',
-                desc: 'Onboard local salons, assist with setup, and track your milestone progress through a dedicated partner dashboard.',
-                route: '/who-benefits#growth-partner',
-              },
-              {
-                title: 'B2B Networks',
-                tag: 'Supply. Distribute. Expand.',
-                desc: 'Wholesale marketplace access connecting manufacturers directly with local salons and verified professionals.',
-                route: '/who-benefits#b2b',
-              },
-              {
-                title: 'Professionals',
-                tag: 'Portfolio. Jobs. Network.',
-                desc: 'Build your digital brand, showcase work, and connect with verified business opportunities in the beauty network.',
-                route: '/who-benefits#professionals',
-              },
-              {
-                title: 'Investors',
-                tag: 'Multi-Vertical • Scalability • Returns',
-                desc: 'Explore market opportunity, monetization streams, and long-term ecosystem expansion strategy.',
-                route: '/who-benefits#investor-section',
-              },
-            ].map((card, i) => (
-              <GlassCard key={i} className="p-5 sm:p-6 flex flex-col justify-between">
-                <div>
-                  <h3 className="text-lg font-heading font-semibold text-white mb-1">{card.title}</h3>
-                  <div className="text-xs text-[#DAAF37] font-medium mb-2.5">{card.tag}</div>
-                  <p className="text-xs text-white/70 font-sans leading-relaxed">{card.desc}</p>
-                </div>
-                <a
-                  href={card.route}
-                  className="mt-3.5 pt-3.5 border-t border-white/10 flex items-center text-xs text-[#DAAF37] hover:text-[#F4D03F] transition-colors"
-                >
-                  <span>View Full Journey</span>
-                  <span className="ml-1">→</span>
-                </a>
-              </GlassCard>
-            ))}
-          </div>
-
-          <div className="flex justify-center">
-            <Button to="/who-benefits" variant="secondary" size="md">
-              {t('home.benefits.cta')}
-            </Button>
-          </div>
+            <Action to="/for-customers" secondary>
+              {c("Explore booking", "Booking समझें")}
+            </Action>
+          </Card>
         </div>
-      </section>
-
-      <SectionDivider className="my-3 sm:my-4" />
-
-      {/* 4.3 Key Products Preview */}
-      <section className="pt-2 sm:pt-3 pb-4 sm:pb-6 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-6">
-          <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#DAAF37]/10 border border-[#DAAF37]/30 text-[#F4D03F] text-xs font-heading font-medium tracking-wide uppercase mb-2">
-              Platform Preview
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold font-serif text-[#F5F5F5]">
-              Powerful Products for a{' '}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#FFF6D6] via-[#F4D03F] to-[#DAAF37]">
-                Bigger Future
-              </span>
-            </h2>
-            <p className="mt-2 text-sm sm:text-base text-white/70 font-sans max-w-xl">
-              Explore our platforms built for customers, businesses, partners and brands.
+      </Section>
+      <Section
+        title={c(
+          "Three everyday problems. A clearer workflow.",
+          "रोज की तीन परेशानियाँ। काम का साफ तरीका।",
+        )}
+      >
+        <div className="card-grid">
+          <Card
+            title={c("Appointments get scattered", "Appointments बिखर जाते हैं")}
+          >
+            <p>
+              {c(
+                "Review bookings together instead of searching across calls and messages.",
+                "Calls और messages में ढूँढने की जगह bookings एक जगह देखें।",
+              )}
             </p>
-          </div>
-          <Button to="/products" variant="secondary" size="sm" className="self-start md:self-auto">
-            View All Products
-          </Button>
+          </Card>
+          <Card
+            title={c(
+              "Customer history gets lost",
+              "Customer history नहीं मिलती",
+            )}
+          >
+            <p>
+              {c(
+                "Keep contact details and visit records together for the next conversation.",
+                "अगली बातचीत के लिए contact details और visit records साथ रखें।",
+              )}
+            </p>
+          </Card>
+          <Card title={c("Follow-up gets forgotten", "Follow-up छूट जाता है")}>
+            <p>
+              {c(
+                "Identify who may need a reminder and review the next action.",
+                "देखें किसे reminder की जरूरत हो सकती है और अगला कदम तय करें।",
+              )}
+            </p>
+          </Card>
         </div>
-
-        {/* Key Products Preview Visual Asset */}
-        <div className="relative w-full rounded-2xl md:rounded-3xl overflow-hidden border border-[#DAAF37]/30 bg-[#0A0A0A] shadow-[0_12px_45px_rgba(0,0,0,0.8)] group">
-          <InteractiveImage
-            src="/assets/home-products-preview.webp"
-            alt="Nexora One Key Products Preview - Customer App, SalonOS, White-Label, Growth Partner, B2B Marketplace"
-            className="w-full h-auto object-cover object-center"
-            loading="lazy"
-          />
-          <div className="absolute inset-0 rounded-2xl md:rounded-3xl pointer-events-none ring-1 ring-inset ring-white/10" />
+      </Section>
+      <Section
+        id="demo"
+        title={c(
+          "Understand the product in three steps",
+          "तीन steps में product समझें",
+        )}
+      >
+        <SalonDemo />
+      </Section>
+      <Section
+        title={c(
+          "From demo to your first useful task",
+          "Demo से अपने पहले उपयोग तक",
+        )}
+      >
+        <ol className="numbered-list">
+          <li>
+            {c(
+              "Try the workflow and decide whether it fits your salon.",
+              "Workflow देखें और समझें कि यह आपके salon के लिए उपयोगी है या नहीं।",
+            )}
+          </li>
+          <li>
+            {c(
+              "Contact the team to confirm pilot access, pricing and supported features.",
+              "Pilot access, pricing और supported features की पुष्टि के लिए team से संपर्क करें।",
+            )}
+          </li>
+          <li>
+            {c(
+              "When access is confirmed, set up your services, staff and shop location, then test your first booking.",
+              "Access confirm होने पर services, staff और shop location setup करके पहली booking test करें।",
+            )}
+          </li>
+        </ol>
+      </Section>
+      <Section
+        title={c("Know what you are evaluating", "जानें कि आप क्या देख रहे हैं")}
+      >
+        <div className="card-grid two">
+          <Card title={c("Clear status", "स्पष्ट status")}>
+            <p>
+              {c(
+                "Product links are labeled Demo or Planned. Verified adoption and revenue figures have not been supplied for this website.",
+                "Product links पर Demo या Planned status है। इस website के लिए verified adoption और revenue figures उपलब्ध नहीं कराए गए हैं।",
+              )}
+            </p>
+            <Action to="/products" secondary>
+              {c("See product status", "Product status देखें")}
+            </Action>
+          </Card>
+          <Card title={c("Clear commercial terms", "स्पष्ट commercial terms")}>
+            <p>
+              {c(
+                "Confirm subscription, booking commission and setup terms before joining. The investor model is not a customer price quote.",
+                "जुड़ने से पहले subscription, booking commission और setup terms confirm करें। Investor model customer price quote नहीं है।",
+              )}
+            </p>
+            <Action to="/pricing" secondary>
+              {c("Review pricing questions", "Pricing समझें")}
+            </Action>
+          </Card>
         </div>
-      </section>
-
-      {/* 4.4 Verticals Section (Beyond Beauty. A Multi-Vertical Ecosystem.) */}
-      <MultiVerticalsSection />
-
-      {/* 4.5 Trust / Differentiation */}
-      <TrustDifferentiationSection />
-
-      {/* 06. CTA Section */}
-      <HomeCTASection />
-    </div>
+      </Section>
+      <Section title={c("Questions before you start", "शुरुआत से पहले के सवाल")}>
+        <FAQ
+          items={[
+            {
+              q: c(
+                "Can I start using it today?",
+                "क्या मैं आज से इस्तेमाल कर सकता हूँ?",
+              ),
+              a: c(
+                "You can explore the demos now. Contact the team to confirm pilot availability and production onboarding.",
+                "आप अभी demos देख सकते हैं। Pilot availability और production onboarding team से confirm करें।",
+              ),
+            },
+            {
+              q: c(
+                "Will Nexora guarantee more customers?",
+                "क्या Nexora ज्यादा customers की guarantee देता है?",
+              ),
+              a: c(
+                "No. Discovery, follow-up and booking tools need to be tested against actual customer demand and repeat usage.",
+                "नहीं। Discovery, follow-up और booking tools को actual demand और repeat usage के आधार पर परखना होगा।",
+              ),
+            },
+          ]}
+        />
+        <div className="actions">
+          <Action to="/contact?interest=salon">
+            {c("Ask about salon access", "Salon access के बारे में पूछें")}
+          </Action>
+        </div>
+      </Section>
+    </Page>
   );
-};
+}
