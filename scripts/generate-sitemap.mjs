@@ -33,6 +33,11 @@ const ROUTE_CONFIG = {
 
 // Aliases that redirect to canonical routes (excluded from sitemap to prevent duplicate indexing)
 const EXCLUDED_ALIASES = new Set([
+  '/ecosystem',
+  '/beauty-ecosystem',
+  '/who-benefits',
+  '/vision-mission',
+  '/insights',
   '/legal',
   '/privacy',
   '/terms',

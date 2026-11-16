@@ -667,7 +667,7 @@ const TermsContent: React.FC = () => (
         18. Business & Investor Information (Section 17.3 Figures)
       </h3>
       <p className="text-xs text-white/70">
-        Financial information, valuation metrics, and projections (such as ₹3.72 Cr revenue, ₹1,38,90,254 profit, ₹11,575 monthly equivalent, and ~43 months recovery) are illustrative modeled projections, not guaranteed returns. For comprehensive notices, please review our official <Link to="/disclaimer" className="text-[#DAAF37] hover:underline font-medium">Disclaimer</Link>.
+        Financial scenarios are planning illustrations, not actual results or guaranteed returns. Current assumptions and calculated outputs are shown together in the investor brief. No monthly payout or capital-recovery period is promised. For comprehensive notices, please review our official <Link to="/disclaimer" className="text-[#DAAF37] hover:underline font-medium">Disclaimer</Link>.
       </p>
     </section>
 
