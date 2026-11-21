@@ -6,6 +6,7 @@ import {
   Layers,
 } from 'lucide-react';
 import { Button } from '../components/common/Button';
+import { SalonJobsShowcase } from '../components/SalonJobsShowcase';
 import { GlassCard } from '../components/common/GlassCard';
 import { StatusBadge } from '../components/common/StatusBadge';
 import { FadeIn } from '../components/common/MotionWrapper';
@@ -230,6 +231,8 @@ export const ProductsPage: React.FC = () => {
           items={expansionVerticals}
         />
       </section>
+
+      <SalonJobsShowcase />
 
       {/* Compact White-Label Architecture Preview */}
       <section className="py-6 sm:py-8 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
